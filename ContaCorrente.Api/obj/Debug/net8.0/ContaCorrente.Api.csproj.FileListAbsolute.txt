@@ -94,3 +94,4 @@ c:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\ContaCorrent
 c:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\ContaCorrente.Api\obj\Debug\net8.0\ref\ContaCorrente.Api.dll
 C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\ContaCorrente.Api\bin\Debug\net8.0\appsettings.Development.json
 C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\ContaCorrente.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\ContaCorrente.Api\obj\Debug\net8.0\ContaCorrente.Api.sourcelink.json

@@ -34,8 +34,10 @@ Características implementadas:
    ```
 
 3. **Acessar**:
-   - ContaCorrente API: http://localhost:5000/swagger
-   - Transferencia API: http://localhost:5001/swagger
+   - ContaCorrente API: https://localhost:62723/swagger/index.html
+   - Transferencia API: https://localhost:62724/swagger/index.html
+
+![Swagger](images/swagger.jpg)
 
 ### Opção 2: Rodar localmente (Desenvolvimento/Debug)
 
@@ -48,7 +50,7 @@ Características implementadas:
    cd ContaCorrente.Api
    dotnet run
    ```
-   - Acesse: http://localhost:5000/swagger
+   - Acesse: http://localhost:62723/swagger
 
 3. **Debugging**:
    - Abra o projeto no VS Code.
@@ -59,43 +61,52 @@ Características implementadas:
 
 ### 1. Registrar uma conta
 ```bash
-curl -X POST http://localhost:5000/api/conta/register \
+curl -X POST http://localhost:62723/api/conta/register \
   -H "Content-Type: application/json" \
   -d '{"cpf":"12345678901","senha":"senha123","nome":"João Silva"}'
 ```
 - Resposta: `{"numero": 123456}` (número da conta gerado).
+![Swagger](images/endpoint1.jpg)
 
 ### 2. Fazer login
 ```bash
-curl -X POST http://localhost:5000/api/conta/login \
+curl -X POST http://localhost:62723/api/conta/login \
   -H "Content-Type: application/json" \
   -d '{"login":"123456","senha":"senha123"}'
 ```
 - Resposta: `{"token": "eyJ..."}`
 
+Observação: Os passos 3 , 4 e 5 devem possuir autorização
+![Swagger](images/swagger2.jpg)
+
+![Swagger](images/endpoint2.jpg)
+
 ### 3. Movimentação (depósito)
 ```bash
-curl -X POST http://localhost:5000/api/conta/movimentacao \
+curl -X POST http://localhost:62723/api/conta/movimentacao \
   -H "Authorization: Bearer <TOKEN>" \
   -H "Content-Type: application/json" \
   -d '{"identificacaoRequisicao":"uuid","valor":100.0,"tipo":"C"}'
 ```
-- Resposta: 204 No Content
-
+- Resposta: 200
+![Swagger](images/endpoint3.jpg)
 ### 4. Consultar saldo
 ```bash
-curl -X GET http://localhost:5000/api/conta/saldo \
+curl -X GET http://localhost:62723/api/conta/saldo \
   -H "Authorization: Bearer <TOKEN>"
 ```
 - Resposta: `{"numero":123456,"nome":"João Silva","data":"2026-01-30T...","saldo":"100.00"}`
-
+![Swagger](images/endpoint4.jpg)
 ### 5. Inativar conta
 ```bash
-curl -X POST http://localhost:5000/api/conta/inactivate \
+curl -X POST http://localhost:62723/api/conta/inactivate \
   -H "Authorization: Bearer <TOKEN>" \
   -H "Content-Type: application/json" \
   -d '{"senha":"senha123"}'
 ```
-- Resposta: 204 No Content
+- Resposta: 400 
+![Swagger](images/endpoint5.jpg)
 
+- Resposta: 200
+![Swagger](images/endpoint6.jpg)
 

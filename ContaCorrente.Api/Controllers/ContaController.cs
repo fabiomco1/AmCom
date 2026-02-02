@@ -51,9 +51,9 @@ namespace BancoDigitalAna.ContaCorrente.Api.Controllers
 
             var success = await _contaService.InactivateAsync(accountId, req.senha);
             if (!success) return BadRequest(new { message = "Conta inválida", type = "INVALID_ACCOUNT" });
-            
-            return NoContent();
-        }
+
+			return Ok(new { message = "Conta Inativada!" });
+		}
 
         [Authorize]
         [HttpPost("movimentacao")]
@@ -77,9 +77,12 @@ namespace BancoDigitalAna.ContaCorrente.Api.Controllers
 				 try
 				 {
 					 var success = await _contaService.MovimentacaoAsync(accountId, req.Valor, req.Tipo, req.IdentificacaoRequisicao);
-					 return NoContent();
-				 }
-				 catch (ArgumentException ex) when (ex.ParamName == "INVALID_ACCOUNT")
+				return Ok(new { message = "Depósito realizado!",
+					valor = req.Valor,
+				});
+
+			}
+			catch (ArgumentException ex) when (ex.ParamName == "INVALID_ACCOUNT")
 				 {
 					 return BadRequest(new { message = "Conta inválida", type = "INVALID_ACCOUNT" });
 				 }
