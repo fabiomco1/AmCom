@@ -1,0 +1,7 @@
+Add-Content .gitignore "# Ignorar arquivos do Visual Studio"
+Add-Content .gitignore ".vs/"
+Add-Content .gitignore "bin/"
+Add-Content .gitignore "obj/" 
+Add-Content .gitignore "*.log"
+Add-Content .gitignore "*.user"
+Add-Content .gitignore "*.suo"
