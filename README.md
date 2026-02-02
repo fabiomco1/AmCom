@@ -26,6 +26,7 @@ Características implementadas:
    mkdir -p data
    docker run --rm -v "$(pwd)/data:/data" alpine sh -c "apk add --no-cache sqlite && sqlite3 /data/contacorrente.db < ContaCorrente.Api/sql/contacorrente.sql"
    ```
+![Executar o Conteiner](images/docker.jpg)
 
 2. **Subir os serviços**:
    ```bash
@@ -97,7 +98,4 @@ curl -X POST http://localhost:5000/api/conta/inactivate \
 ```
 - Resposta: 204 No Content
 
-## Observações
-- As implementações aqui são um ponto de partida: validação de CPF, tratamento de senha (hash/salt) e segurança devem ser reforçados para produção.
-- Idempotência, cache, testes automatizados e consumo/produção Kafka são deixados como próximos passos.
-- Para debug, use a opção local. Breakpoints não funcionam diretamente em containers sem remote debugging.
+
