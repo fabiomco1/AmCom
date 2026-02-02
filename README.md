@@ -60,6 +60,7 @@ Características implementadas:
    - Abra o projeto no VS Code.
    - Coloque breakpoints em `Controllers/ContaController.cs`.
    - Execute `dotnet run` e teste via Swagger ou curl.
+![Debugging](images/ProjetoVIsualStudio.jpg)
 
 ## Testando os Endpoints
 
