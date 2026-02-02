@@ -1,0 +1,76 @@
+[
+  {
+    "ContainingType": "BancoDigitalAna.ContaCorrente.Api.Controllers.ContaController",
+    "Method": "Inactivate",
+    "RelativePath": "api/Conta/inactivate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "BancoDigitalAna.ContaCorrente.Api.Models.InactivateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BancoDigitalAna.ContaCorrente.Api.Controllers.ContaController",
+    "Method": "Login",
+    "RelativePath": "api/Conta/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "BancoDigitalAna.ContaCorrente.Api.Models.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BancoDigitalAna.ContaCorrente.Api.Controllers.ContaController",
+    "Method": "Movimentacao",
+    "RelativePath": "api/Conta/movimentacao",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "BancoDigitalAna.ContaCorrente.Api.Models.MovimentacaoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BancoDigitalAna.ContaCorrente.Api.Controllers.ContaController",
+    "Method": "Register",
+    "RelativePath": "api/Conta/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "BancoDigitalAna.ContaCorrente.Api.Models.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BancoDigitalAna.ContaCorrente.Api.Controllers.ContaController",
+    "Method": "Saldo",
+    "RelativePath": "api/Conta/saldo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

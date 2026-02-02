@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projetos\\AmCom\\Teste-Desenvolvedor-CSharp-API-v4\\BancoDigitalAna\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AED52A98-806F-EE68-68AC-9EB99D40EDF4}|ContaCorrente.Api\\ContaCorrente.Api.csproj|c:\\projetos\\amcom\\teste-desenvolvedor-csharp-api-v4\\bancodigitalana\\contacorrente.api\\controllers\\contacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AED52A98-806F-EE68-68AC-9EB99D40EDF4}|ContaCorrente.Api\\ContaCorrente.Api.csproj|solutionrelative:contacorrente.api\\controllers\\contacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AED52A98-806F-EE68-68AC-9EB99D40EDF4}|ContaCorrente.Api\\ContaCorrente.Api.csproj|c:\\projetos\\amcom\\teste-desenvolvedor-csharp-api-v4\\bancodigitalana\\contacorrente.api\\services\\contaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AED52A98-806F-EE68-68AC-9EB99D40EDF4}|ContaCorrente.Api\\ContaCorrente.Api.csproj|solutionrelative:contacorrente.api\\services\\contaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AED52A98-806F-EE68-68AC-9EB99D40EDF4}|ContaCorrente.Api\\ContaCorrente.Api.csproj|c:\\projetos\\amcom\\teste-desenvolvedor-csharp-api-v4\\bancodigitalana\\contacorrente.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AED52A98-806F-EE68-68AC-9EB99D40EDF4}|ContaCorrente.Api\\ContaCorrente.Api.csproj|solutionrelative:contacorrente.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projetos\\AmCom\\Teste-Desenvolvedor-CSharp-API-v4\\BancoDigitalAna\\ContaCorrente.Api\\Program.cs",
+              "RelativeDocumentMoniker": "ContaCorrente.Api\\Program.cs",
+              "ToolTip": "C:\\Projetos\\AmCom\\Teste-Desenvolvedor-CSharp-API-v4\\BancoDigitalAna\\ContaCorrente.Api\\Program.cs",
+              "RelativeToolTip": "ContaCorrente.Api\\Program.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAEAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T01:34:40.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ContaController.cs",
+              "DocumentMoniker": "C:\\Projetos\\AmCom\\Teste-Desenvolvedor-CSharp-API-v4\\BancoDigitalAna\\ContaCorrente.Api\\Controllers\\ContaController.cs",
+              "RelativeDocumentMoniker": "ContaCorrente.Api\\Controllers\\ContaController.cs",
+              "ToolTip": "C:\\Projetos\\AmCom\\Teste-Desenvolvedor-CSharp-API-v4\\BancoDigitalAna\\ContaCorrente.Api\\Controllers\\ContaController.cs*",
+              "RelativeToolTip": "ContaCorrente.Api\\Controllers\\ContaController.cs*",
+              "ViewState": "AgIAACEAAAAAAAAAAAAwwGcAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T00:17:57.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ContaService.cs",
+              "DocumentMoniker": "C:\\Projetos\\AmCom\\Teste-Desenvolvedor-CSharp-API-v4\\BancoDigitalAna\\ContaCorrente.Api\\Services\\ContaService.cs",
+              "RelativeDocumentMoniker": "ContaCorrente.Api\\Services\\ContaService.cs",
+              "ToolTip": "C:\\Projetos\\AmCom\\Teste-Desenvolvedor-CSharp-API-v4\\BancoDigitalAna\\ContaCorrente.Api\\Services\\ContaService.cs",
+              "RelativeToolTip": "ContaCorrente.Api\\Services\\ContaService.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAIwEkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T22:39:40.254Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\InitDbTemp\obj\Debug\net9.0\InitDbTemp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\InitDbTemp\obj\Debug\net9.0\InitDbTemp.AssemblyInfoInputs.cache
+C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\InitDbTemp\obj\Debug\net9.0\InitDbTemp.AssemblyInfo.cs
+C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\InitDbTemp\obj\Debug\net9.0\InitDbTemp.csproj.CoreCompileInputs.cache
