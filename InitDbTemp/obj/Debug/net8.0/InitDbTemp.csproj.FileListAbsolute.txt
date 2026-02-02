@@ -38,3 +38,4 @@ C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\InitDbTemp\o
 C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\InitDbTemp\obj\Debug\net8.0\InitDbTemp.pdb
 C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\InitDbTemp\obj\Debug\net8.0\InitDbTemp.genruntimeconfig.cache
 C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\InitDbTemp\obj\Debug\net8.0\ref\InitDbTemp.dll
+C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\InitDbTemp\obj\Debug\net8.0\InitDbTemp.sourcelink.json

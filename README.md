@@ -35,15 +35,19 @@ Características implementadas:
 
 3. **Acessar**:
    - ContaCorrente API: https://localhost:62723/swagger/index.html
-   - Transferencia API: https://localhost:62724/swagger/index.html
-
 ![Swagger](images/swagger.jpg)
+
+   - Transferencia API: https://localhost:62724/swagger/index.html
+![Swagger](images/endpoint8.jpg)
 
 ### Opção 2: Rodar localmente (Desenvolvimento/Debug)
 
 1. **Configurar o banco**:
-   - Certifique-se de que `./data/contacorrente.db` existe (copie de um container ou crie localmente).
+   - Certifique-se de que `./data/contacorrente.db` .
    - O `appsettings.Development.json` aponta para `../data/contacorrente.db`.
+
+![Banco de dados](images/BancodeDados-SqLite.jpg)
+![Tabelas](images/BancodeDados-SqLite2.jpg)
 
 2. **Executar a API**:
    ```bash
@@ -109,4 +113,25 @@ curl -X POST http://localhost:62723/api/conta/inactivate \
 
 - Resposta: 200
 ![Swagger](images/endpoint6.jpg)
+
+### 6. Transferencia
+```bash
+curl -X 'POST' \
+  'https://localhost:62724/api/Transferencia' \
+  -H 'accept: */*' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiZjExZTM2MS0zMDc1LTRmZTMtYWQ5OS0wYTlhZTQyYWQzODEiLCJhY2NvdW50TnVtYmVyIjoiMTI3NTI2IiwibmJmIjoxNzY5OTk5MjA2LCJleHAiOjE3NzAwMDY0MDYsImlhdCI6MTc2OTk5OTIwNn0.4vmW_MgDfSaHUwZAAk8ZDaauN_oamtWkT2sKJm7LYgo' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "identificacaoRequisicao": "Transferencia",
+  "contaOrigem": "127526",
+  "contaDestino": "245587",
+  "valor": 50
+}'
+```
+- Resposta: 200
+![Swagger](images/endpoint8.jpg)
+
+### Testes Integrados
+![Testes](images/Testes.jpg)
+
 

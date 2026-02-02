@@ -485,3 +485,5 @@ c:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\BancoDigital
 c:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\BancoDigitalAna.Tests\obj\Debug\net8.0\BancoDigitalAna.Tests.pdb
 c:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\BancoDigitalAna.Tests\obj\Debug\net8.0\BancoDigitalAna.Tests.genruntimeconfig.cache
 c:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\BancoDigitalAna.Tests\obj\Debug\net8.0\ref\BancoDigitalAna.Tests.dll
+C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\BancoDigitalAna.Tests\obj\Debug\net8.0\BancoDigitalAna.Tests.sourcelink.json
+C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\BancoDigitalAna.Tests\bin\Debug\net8.0\appsettings.Development.json

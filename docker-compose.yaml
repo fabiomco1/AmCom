@@ -22,7 +22,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__Default=Data Source=/data/contacorrente.db
-      - Jwt__Key=change_this_secret_for_prod
+      - Jwt__Key=VeryLongDevelopmentJwtSecretKey_ChangeForProd_0123456789ABCDEFG
       - CONTA_BASE_URL=http://contacorrente
     depends_on:
       - contacorrente

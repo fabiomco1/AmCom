@@ -95,3 +95,4 @@ C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\Tarifa.Servi
 C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\Tarifa.Service\obj\Debug\net8.0\Tarifa.Service.pdb
 C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\Tarifa.Service\obj\Debug\net8.0\Tarifa.Service.genruntimeconfig.cache
 C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\Tarifa.Service\obj\Debug\net8.0\ref\Tarifa.Service.dll
+C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\Tarifa.Service\obj\Debug\net8.0\Tarifa.Service.sourcelink.json

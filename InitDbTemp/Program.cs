@@ -1,7 +1,7 @@
 using Microsoft.Data.Sqlite;
 using System.IO;
 
-var dbPath = "../contacorrente.db";
+var dbPath = "../data/contacorrente.db";
 var sqlPath = "../ContaCorrente.Api/sql/contacorrente.sql";
 
 if (!File.Exists(dbPath))

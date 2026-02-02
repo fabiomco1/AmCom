@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "BancoDigitalAna.Transferencia.Api.Controllers.TransferenciaController",
+    "Method": "Transfer",
+    "RelativePath": "api/Transferencia",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "BancoDigitalAna.Transferencia.Api.Models.TransferRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

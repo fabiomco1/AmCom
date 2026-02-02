@@ -3,11 +3,39 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Data.Sqlite;
 using Confluent.Kafka;
+using Microsoft.OpenApi.Models;
+using BancoDigitalAna.Transferencia.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers();
+builder.Services.AddMvc();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "JWT Authorization header using the Bearer scheme."
+    });
+
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+});
 
 var jwtKey = builder.Configuration.GetSection("Jwt").GetValue<string>("Key") ?? "change_this_secret_for_prod";
 var key = Encoding.ASCII.GetBytes(jwtKey);
@@ -39,6 +67,8 @@ builder.Services.AddSingleton<System.Data.IDbConnection>(_ =>
 });
 
 builder.Services.AddHttpClient("conta");
+// Add service
+builder.Services.AddScoped<ITransferenciaService, TransferenciaService>();
 // Kafka producer configuration (Confluent.Kafka)
 builder.Services.AddSingleton<Confluent.Kafka.IProducer<Null, string>>(sp =>
 {

@@ -89,3 +89,6 @@ C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\Transferenci
 C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\Transferencia.Api\obj\Debug\net8.0\Transferencia.Api.pdb
 C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\Transferencia.Api\obj\Debug\net8.0\Transferencia.Api.genruntimeconfig.cache
 C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\Transferencia.Api\obj\Debug\net8.0\ref\Transferencia.Api.dll
+C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\Transferencia.Api\bin\Debug\net8.0\appsettings.json
+C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\Transferencia.Api\obj\Debug\net8.0\Transferencia.Api.sourcelink.json
+C:\Projetos\AmCom\Teste-Desenvolvedor-CSharp-API-v4\BancoDigitalAna\Transferencia.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

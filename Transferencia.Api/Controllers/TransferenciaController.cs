@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-using System.Data;
-using Dapper;
+using BancoDigitalAna.Transferencia.Api.Services;
+using BancoDigitalAna.Transferencia.Api.Models;
 
 namespace BancoDigitalAna.Transferencia.Api.Controllers
 {
@@ -9,60 +9,45 @@ namespace BancoDigitalAna.Transferencia.Api.Controllers
     [Route("api/[controller]")]
     public class TransferenciaController : ControllerBase
     {
-        private readonly IHttpClientFactory _http;
-        private readonly IDbConnection _db;
+        private readonly ITransferenciaService _transferenciaService;
 
-        private readonly Confluent.Kafka.IProducer<Confluent.Kafka.Null, string> _producer;
-
-        public TransferenciaController(IHttpClientFactory http, IDbConnection db, Confluent.Kafka.IProducer<Confluent.Kafka.Null, string> producer)
+        public TransferenciaController(ITransferenciaService transferenciaService)
         {
-            _http = http;
-            _db = db;
-            _producer = producer;
+            _transferenciaService = transferenciaService;
         }
 
         [Authorize]
         [HttpPost]
-        public IActionResult Transfer([FromBody] TransferRequest req)
+        public async Task<IActionResult> Transfer([FromBody] TransferRequest req)
         {
-            // Basic validations
-            if (req.Valor <= 0) return BadRequest(new { message = "Valor inválido", type = "INVALID_VALUE" });
-
-            // Call ContaCorrente API to debit
-            var client = _http.CreateClient();
-            // In a real environment, use service discovery or config. For now expect CONTA_BASE_URL env var
-            var baseUrl = Environment.GetEnvironmentVariable("CONTA_BASE_URL") ?? "http://contacorrente:5000";
-
-            var debit = new { IdentificacaoRequisicao = req.IdentificacaoRequisicao, Valor = req.Valor, Tipo = "D" };
-            var response = client.PostAsJsonAsync($"{baseUrl}/api/conta/movimentacao", debit).GetAwaiter().GetResult();
-            if (!response.IsSuccessStatusCode)
-            {
-                return BadRequest(new { message = "Falha no débito", type = "INVALID_ACCOUNT" });
-            }
-
-            var credit = new { IdentificacaoRequisicao = req.IdentificacaoRequisicao, NumeroConta = req.ContaDestino, Valor = req.Valor, Tipo = "C" };
-            response = client.PostAsJsonAsync($"{baseUrl}/api/conta/movimentacao", credit).GetAwaiter().GetResult();
-            if (!response.IsSuccessStatusCode)
-            {
-                // estorno
-                client.PostAsJsonAsync($"{baseUrl}/api/conta/movimentacao", new { IdentificacaoRequisicao = req.IdentificacaoRequisicao, Valor = req.Valor, Tipo = "C" }).GetAwaiter().GetResult();
-                return BadRequest(new { message = "Falha no crédito", type = "INVALID_ACCOUNT" });
-            }
-
-            var id = Guid.NewGuid().ToString();
-            _db.Execute("INSERT INTO transferencia (idtransferencia, idcontacorrente_origem, idcontacorrente_destino, datamovimento, valor) VALUES (@Id, @Origem, @Destino, @Data, @Valor)", new { Id = id, Origem = req.ContaOrigem, Destino = req.ContaDestino, Data = DateTime.UtcNow.ToString("dd/MM/yyyy HH:mm:ss"), Valor = req.Valor });
-
-            // Publish transfer event for downstream processing (tarifas)
             try
             {
-                var payload = System.Text.Json.JsonSerializer.Serialize(new { IdRequisicao = req.IdentificacaoRequisicao, ContaOrigem = req.ContaOrigem });
-                _producer.Produce("transferencias", new Confluent.Kafka.Message<Confluent.Kafka.Null, string> { Value = payload });
-            }
-            catch { /* best-effort, do not fail the API on publish error */ }
+                var accountNumber = User.FindFirst("accountNumber")?.Value;
+                if (accountNumber == null) return Forbid();
 
-            return NoContent();
+                var authHeader = Request.Headers["Authorization"].ToString();
+
+                await _transferenciaService.TransferAsync(req, accountNumber, authHeader);
+
+                return NoContent();
+            }
+            catch (ArgumentException ex) when (ex.ParamName == "INVALID_VALUE")
+            {
+                return BadRequest(new { message = "Valor inválido", type = "INVALID_VALUE" });
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return Forbid();
+            }
+            catch (ArgumentException ex) when (ex.ParamName == "INVALID_ACCOUNT")
+            {
+                return BadRequest(new { message = ex.Message, type = "INVALID_ACCOUNT" });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { message = "Erro interno", type = "INTERNAL_ERROR" });
+            }
         }
     }
 
-    public record TransferRequest(string IdentificacaoRequisicao, string ContaOrigem, string ContaDestino, double Valor);
 }
